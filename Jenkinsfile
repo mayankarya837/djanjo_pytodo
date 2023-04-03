@@ -2,8 +2,8 @@ pipeline{
     agent any
 
     stages{
-        stage("code"){
-            echo "copying url"
+        stage('code'){
+            echo 'copying url'
             git url:"https://github.com/mayankarya837/djanjo_pytodo.git", branch:"develop"
         }
         stage("Build"){
