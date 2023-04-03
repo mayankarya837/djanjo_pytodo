@@ -15,7 +15,7 @@ pipeline{
         }
         stage("Push"){
             steps{
-                withCredentials([usernamePassword(credentialsId:'deockerHub',passwordvariable:'dockerpass',usernamevariable:'dockeruser')]){
+                withCredentials([usernamePassword(credentialsId:'dockerHub',passwordVariable:'dockerpass',usernameVariable:'dockeruser')]){
                     sh 'docker login -u ${env.dockeruser} -p ${env.dockerpass}'
                     sh 'docker push mayankaryta837/todo:latest'
                 }
